@@ -15,7 +15,7 @@ class WritePost extends StatelessWidget {
     final _formkey = GlobalKey<FormState>();
     CollectionReference _datapost =
         FirebaseFirestore.instance.collection("Post");
-    DataPost post = DataPost("", "", "");
+    DataPost post = DataPost("", "", "", "");
     return Scaffold(
       body: FutureBuilder(
         future: Firebase.initializeApp(),

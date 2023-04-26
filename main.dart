@@ -22,13 +22,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      routes: {
-        '/Social': (context) => const Feed(),
-        '/deli': (context) => HomePageDelivery(),
-      },
-      home: const FirstPage(),
-    );
+    return MaterialApp(routes: {
+      '/Social': (context) => const Feed(),
+      '/deli': (context) => HomePageDelivery(),
+    }, home: const CurrentLocationMap());
   }
 }
 
@@ -42,7 +39,7 @@ class FirstPage extends StatelessWidget {
           decoration: const BoxDecoration(color: Colors.grey),
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
-          child: Home(),
+          child: const Home(),
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
@@ -180,7 +177,7 @@ class _QrPageState extends State<QrPage> {
               decoration: const BoxDecoration(color: Colors.white),
               height: MediaQuery.of(context).size.height * 0.3,
               width: MediaQuery.of(context).size.width * 0.6,
-              child: QrGen(),
+              child: const QrGen(),
             ),
           ),
           IconButton(

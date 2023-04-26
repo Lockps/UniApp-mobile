@@ -7,6 +7,7 @@ import 'package:like_button/like_button.dart';
 //*=====================PATH-FILE======================//
 import 'package:project_uni/Social/Constructor/ctdatalist.dart';
 import 'package:project_uni/Social/Constructor/ctdatapost.dart';
+import 'package:project_uni/Social/Screen/commentPage.dart';
 import 'package:project_uni/Social/Screen/postScreen.dart';
 
 class Feed extends StatefulWidget {
@@ -68,7 +69,14 @@ class _FeedState extends State<Feed> {
                           top: 15,
                           right: 15,
                           child: IconButton(
-                              onPressed: () {}, icon: Icon(Icons.comment))),
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        //!=====================FIX-THIS======================//
+                                        builder: (context) => Scaffold()));
+                              },
+                              icon: Icon(Icons.comment))),
                       Positioned(
                         top: 17,
                         right: 60,
