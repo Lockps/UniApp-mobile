@@ -67,8 +67,9 @@ class _CurrentLocationMapState extends State<CurrentLocationMap> {
               markerId: const MarkerId("Press for add accident"),
               position: position,
               onTap: () {},
-            )
-          }),
+              draggable: true, 
+            ),
+          },),
     );
   }
 }

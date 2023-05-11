@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:location/location.dart';
 
 class GetLocation {
@@ -18,7 +19,9 @@ class GetLocation {
     if (!_isSericeEnable) {
       _isSericeEnable = await location.requestService();
       if (!_isSericeEnable) {
-        print("Service Error");
+        const SnackBar(
+          content: Text("Service Error"),
+        );
       }
     }
   }
@@ -28,7 +31,9 @@ class GetLocation {
     if (_permissionStatus == PermissionStatus.denied) {
       _permissionStatus = await location.requestPermission();
       if (_permissionStatus != PermissionStatus.granted) {
-        print("Permission failed");
+        const SnackBar(
+          content: Text("Permission Failed"),
+        );
       }
     }
   }
